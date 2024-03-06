@@ -24,7 +24,7 @@
     <!--<img src="images/pistola.jpg" alt="Logo" width="80" height="80">-->
   </a>
 
-<h3 align="center">Crud</h3>
+<h3 align="center">Virtual Curl IA</h3>
 
 
   <p align="center">
