@@ -4,10 +4,10 @@ import time
 import math
 
 '''
-like hand tracking , 
-pose tracking have two basis running in the backend
-1- pose detection :- crop the pose form image
-2- placing land marks :- 33 land marks for whole body 25 for the upper body only
+El seguimiento de pose tiene dos bases ejecutándose en el backend.
+1- detección de pose: - recorta la imagen de la pose
+2- colocación de marcas de referencia: - 33 marcas de referencia para todo el cuerpo 25 solo para la parte superior del cuerpo
+
 '''
 
 class poseDetector :

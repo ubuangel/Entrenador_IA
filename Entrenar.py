@@ -7,7 +7,7 @@ import numpy as np
 import threading
 import pyglet
 
-#from playsound import playsound
+
 
 def generate_image(img1, img2, ys,xs) :
     h2,w2 = img2.shape[:2]
@@ -19,7 +19,7 @@ def generate_image(img1, img2, ys,xs) :
     return img1
 
 def check_weight(img, current_duration_for_curl, counter, wrong_position):
-    #if (len(self.lm_list) > 16):
+
     x, y = 600, 320
     if wrong_position :
         cv2.putText(img, f'  Asegurate que', (x + 50, y - 110), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 255), 2)
@@ -35,8 +35,7 @@ def check_weight(img, current_duration_for_curl, counter, wrong_position):
         cv2.putText(img, f'Solo falta: {10 - counter}', (x + 80, y - 35),
                     cv2.FONT_HERSHEY_DUPLEX, 1, (76, 153, 0), 2)
     elif current_duration_for_curl > 3 and counter <= 6:
-     #   cv2.putText(img, f' s', (x + 50, y - 110),
-      #              cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 255), 2)
+
         cv2.putText(img, f'Solo tenemos:', (x + 70, y - 110),
                     cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 0), 2)
         
@@ -84,7 +83,7 @@ def aiTrainer() :
     first_sound_enter=True
     while True :
         success, img = cap.read()
-        #imgx = cap.read()
+       
         right_pos, hand = piStat.rightPosture(img)
         cTime = time.time()
         if first_time_enter:
@@ -104,19 +103,11 @@ def aiTrainer() :
         cv2.rectangle(img, (0,0), (210,480), (255,255,255), -1)
         coach_img = cv2.imread("Images/coachredi.jpg")
         
-        #img_2 = cv2.imread("Images/coach_imgbraso.png")
-        
-       # imgx = generate_image(img, img_2, 0, 0)
-       # cv2.putText(imgx, f'Si estas listo haz ', (200, 210), cv2.FONT_HERSHEY_DUPLEX, 1,
-                  #  (0, 0, 0), 2)
-       # coach_imgbraso = cv2.imread("Images/coach_imgbraso.png")
-       # img = np.concatenate((img, coach_img), axis=1)
-       # imgx = np.concatenate((imgx, coach_imgbraso), axis=2)
 
         if not timer and hand_order==verified_hand:
             wrong_pos = piStat.wrongElbowPosition(img, verified_hand)
             counter, current_duration_for_curl = piStat.count_curl_and_time(img, hand_cof, verified_hand)
-            #print(f'counter in if timer is {counter} and hand_order is {hand_order}')
+           
             check_weight(img, current_duration_for_curl, counter, wrong_pos)
         
         elif 9<timer<=11:
@@ -131,11 +122,8 @@ def aiTrainer() :
         if 0<timer<=1:
             cv2.putText(img, f' Ya!!', (700, 200),cv2.FONT_HERSHEY_DUPLEX, 1, (76, 153, 0), 2)
             if first_sound_enter==True:
-                #cv2.putText(img, f' Ya!!', (700, 200),cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 0), 2)
-                #playsound("/media/angel/6bb1b2ca-61bc-4a5d-a30a-10ec15e3170c/angel/IHCProyectos/AI_PiSeps_Trainer/sounds/short_whistle.mp3")
-#                sound = pyglet.resource.media('aiTrainer/short_whistle.mp3', streaming=False)
-            #    sound.play()
-                
+       
+       
 
                 first_sound_enter=False
 
@@ -147,10 +135,6 @@ def aiTrainer() :
 
         cv2.putText(img, f'Cuenta: ', (10, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (42, 42, 162), 2)
         cv2.putText(img, f'{counter}', (130, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 0), 2)
-        #cv2.putText(img, f'Postura: ', (10, 160), cv2.FONT_HERSHEY_DUPLEX, 1, (42, 42, 162), 2)
-        #cv2.putText(img, f'{right_pos}', (160, 160), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0), 2)
-       # cv2.putText(img, f'Mano: ', (10, 130), cv2.FONT_HERSHEY_DUPLEX, 1, (42, 42, 162), 2)
-        #cv2.putText(img, f'{verified_hand}', (120, 130), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0), 2)
         cv2.putText(img, f'Serie: ', (10, 90), cv2.FONT_HERSHEY_DUPLEX, 1, (42, 42, 162), 2)
         cv2.putText(img, f'{group}/4', (110, 90), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 0), 2)
         cv2.putText(img, f'Descanso: ', (10, 130), cv2.FONT_HERSHEY_DUPLEX, 1, (42, 42, 162), 2)
@@ -160,7 +144,7 @@ def aiTrainer() :
             print(f'in if and counter is {counter}')
             if first_enter:
                 group += 1
-                #todo change hand every group and set a timer
+               
                 hand_order = "Izquierdo" if hand_order == "Derecho" else "Derecho"
                 counter = 0
                 timer = 15
@@ -189,7 +173,7 @@ def aiTrainer() :
             
             sound = pyglet.resource.media('sounds/long_whistle.mp3', streaming=False)
             sound.play()
-           # pss.playsound("E:/computer_vision_course/AITrainer/sounds/long_whistle.wav")
+          
             return True
 
         cv2.imshow("AI Trainer", img)
@@ -199,7 +183,7 @@ def aiTrainer() :
         if cv2.getWindowProperty('AI Trainer',cv2.WND_PROP_VISIBLE) < 1: 
             break
    
-        #cv2.setWindowProperty('AI Trainer', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+       
         cv2.waitKey(1)
        
         

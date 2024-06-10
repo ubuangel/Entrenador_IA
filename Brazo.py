@@ -39,8 +39,6 @@ class PiSeps :
 
     def get_left_or_right(self, img) :
         pass
-        #if (len(self.lm_list) > 12) :
-        #    print(selflm)
 
 
     def wrongElbowPosition(self, img, hand):
@@ -59,8 +57,6 @@ class PiSeps :
                 x1, x2, y1 = x13, x11 , y13
                 hand_cof = -1
 
-            #print(hand_cof)
-           #print(int(x1-x2))
             if int(x1 - x2) < (-10*hand_cof):
                 self.wrong_position = (hand == "Derecho")
             else:
@@ -95,8 +91,6 @@ class PiSeps :
 
         if self.count_flip:
             self.counter += 1
-            #print(self.counter)
-            #print(self.timeForCurl)
             self.first_enter = True
             self.count_flip = False
 
@@ -105,6 +99,6 @@ class PiSeps :
             self.counter = 0
             return 10, time.time() - self.pTime
 
-        #self.check_weight(img, time.time()-self.pTime)
+
 
         return self.counter, time.time()-self.pTime
