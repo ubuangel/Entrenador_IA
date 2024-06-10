@@ -1,9 +1,9 @@
 import cv2
 import time
-from aiTrainer import poseModule as pm
-from aiTrainer import PiSeps as ps
+import ModuloPose as pm
+import Brazo as ps
 import numpy as np
-#import playsound as pss
+
 import threading
 import pyglet
 
@@ -110,7 +110,7 @@ def aiTrainer() :
        # cv2.putText(imgx, f'Si estas listo haz ', (200, 210), cv2.FONT_HERSHEY_DUPLEX, 1,
                   #  (0, 0, 0), 2)
        # coach_imgbraso = cv2.imread("Images/coach_imgbraso.png")
-        img = np.concatenate((img, coach_img), axis=1)
+       # img = np.concatenate((img, coach_img), axis=1)
        # imgx = np.concatenate((imgx, coach_imgbraso), axis=2)
 
         if not timer and hand_order==verified_hand:
@@ -133,8 +133,8 @@ def aiTrainer() :
             if first_sound_enter==True:
                 #cv2.putText(img, f' Ya!!', (700, 200),cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 0), 2)
                 #playsound("/media/angel/6bb1b2ca-61bc-4a5d-a30a-10ec15e3170c/angel/IHCProyectos/AI_PiSeps_Trainer/sounds/short_whistle.mp3")
-                sound = pyglet.resource.media('aiTrainer/short_whistle.mp3', streaming=False)
-                sound.play()
+#                sound = pyglet.resource.media('aiTrainer/short_whistle.mp3', streaming=False)
+            #    sound.play()
                 
 
                 first_sound_enter=False

@@ -1,4 +1,4 @@
-from aiTrainer import poseModule as pm
+import ModuloPose as pm
 import cv2
 import time
 import math
