@@ -94,7 +94,7 @@ Un proyecto de visión por computadora tiene como objetivo crear un entrenador v
 
 Sólo funciona cuando la mano detectada es la misma que la mano deseada
 
-El entrenador de IA se puede utilizar como asistente de entrenamiento en salas de gimnasio o como alternativa para hacer ejercicio adecuado en casa.
+El entrenador de IA se puede utilizar como asistente de entrenamiento en salas de gimnasio o como alternativa para hacer ejercicio adecuado en casa.ga
 
 ![Descripción de la imagen Markdown](/images/traking.png)
 
