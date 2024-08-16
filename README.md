@@ -96,7 +96,7 @@ Sólo funciona cuando la mano detectada es la misma que la mano deseada
 
 El entrenador de IA se puede utilizar como asistente de entrenamiento en salas de gimnasio o como alternativa para hacer ejercicio adecuado en casa.
 
-![Descripción de la imagen Markdown](/images/traking.gif)
+![Descripción de la imagen Markdown](/images/traking.png)
 
 
 
